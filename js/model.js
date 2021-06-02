@@ -1,3 +1,5 @@
+/*EXPORTANDO LA CLASE 'Modal' */
+
 export default class Model {
     constructor(){
         this.view = null;

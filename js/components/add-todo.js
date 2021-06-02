@@ -1,4 +1,8 @@
+/*IMPORTANDO EL 'alert.js'*/
+
 import Alert from './alert.js'
+
+/*EXPORTANDO LA CLASE 'AddTodo' */
 
 export default class AddTodo {
     constructor(){

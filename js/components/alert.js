@@ -1,3 +1,5 @@
+/*EXPORTANDO LA CLASE 'Alert' */
+
 export default class Alert {
     constructor(alertId) {
         this.alert = document.getElementById(alertId);

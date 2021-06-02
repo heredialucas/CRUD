@@ -1,4 +1,8 @@
+/*CREAMOS UN EVENTO EN EL 'DOM' */
+
 document.addEventListener('DOMContentLoaded', function () {
+
+    /*VARIABLES Y CONSTANTES CREADAS */
 
     const title = document.getElementById('title');    
     const description = document.getElementById('description');

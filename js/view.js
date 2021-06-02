@@ -1,6 +1,10 @@
+/*IMPORTANDO LOS COMPONENTES 'add-todo.js' y 'modal.js' y 'filters.js'*/
+
 import AddTodo from './components/add-todo.js';
 import Modal from './components/modal.js';
 import Filters from './components/filters.js';
+
+/*EXPORTANDO LA CLASE 'View' */
 
 export default class View {
     constructor(){

@@ -1,4 +1,8 @@
+/*IMPORTANDO EL ''alert.js */
+
 import Alert from './alert.js'
+
+/*EXPORTANDO LA CLASE ''Modal */
 
 export default class Modal {
     constructor(){

@@ -1,3 +1,5 @@
+/*EXPORTANDO LA CLASE ''Filters */
+
 export default class Filters {
     constructor(){
         this.form = document.getElementById('filters');

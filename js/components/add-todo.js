@@ -1,25 +1,25 @@
 /*IMPORTANDO EL 'alert.js'*/
 
-import Alert from './alert.js'
+import Alert from "./alert.js";
 
 /*EXPORTANDO LA CLASE 'AddTodo' */
 
 export default class AddTodo {
-    constructor(){
-        this.btn = document.getElementById('add');
-        this.title = document.getElementById('title');    
-        this.description = document.getElementById('description');
-        this.alert = new Alert('alert');
-    }
+  constructor() {
+    this.btn = document.getElementById("add");
+    this.title = document.getElementById("title");
+    this.description = document.getElementById("description");
+    this.alert = new Alert("alert");
+  }
 
-    onClick(callback) {
-        this.btn.onclick = () => {
-            if (title.value === '' || description.value === ''){
-                this.alert.show('Title and description are required');
-        } else {
-            this.alert.hide();
-            callback(this.title.value, this.description.value);
-            }
-        }
-    }
+  onClick(callback) {
+    this.btn.onclick = () => {
+      if (title.value === "" || description.value === "") {
+        this.alert.show("Title and description are required");
+      } else {
+        this.alert.hide();
+        callback(this.title.value, this.description.value);
+      }
+    };
+  }
 }

@@ -1,70 +1,70 @@
 /*EXPORTANDO LA CLASE 'Modal' */
 
 export default class Model {
-    constructor(){
-        this.view = null;
-        this.todos = JSON.parse(localStorage.getItem('todos'));
-        if (!this.todos || this.todos.length < 1) {
-            this.todos = [
-                {
-                id: 0,
-                title: 'Learn JS',
-                description: 'Watch JS tutorials',
-                completed: false,
-                }      
-            ]
-        
-        this.currentId = 1;
+  constructor() {
+    this.view = null;
+    this.todos = JSON.parse(localStorage.getItem("todos"));
+    if (!this.todos || this.todos.length < 1) {
+      this.todos = [
+        {
+          id: 0,
+          title: "Learn JS",
+          description: "Watch JS tutorials",
+          completed: false,
+        },
+      ];
+
+      this.currentId = 1;
     } else {
-        this.currentId = this.todos[this.todos.length -1].id +1;
+      this.currentId = this.todos[this.todos.length - 1].id + 1;
     }
-}
-    setView(view) {
-        this.view = view;
-    }
+  }
+  setView(view) {
+    this.view = view;
+  }
 
-    save (){
-        localStorage.setItem('todos', JSON.stringify(this.todos));
-    }
+  save() {
+    localStorage.setItem("todos", JSON.stringify(this.todos));
+  }
 
-    getTodos(){
-       return this.todos.map((todo) => ({...todo}));
-    }
+  getTodos() {
+    return this.todos.map((todo) => ({ ...todo }));
+  }
 
-    findTodo(id) {
-        return this.todos.findIndex((todo) => todo.id === id);
-    }
-    
-    toggleCompleted(id) {
-        const index = this.findTodo(id);
-        const todo = this.todos[index];
-        todo.completed = !todo.completed;
-        this.save();
-    }
+  findTodo(id) {
+    return this.todos.findIndex((todo) => todo.id === id);
+  }
 
-    editTodo(id, values) {
-        const index = this.findTodo(id);
-        Object.assign(this.todos[index], values);
-        this.save();
-    }
+  toggleCompleted(id) {
+    const index = this.findTodo(id);
+    const todo = this.todos[index];
+    todo.completed = !todo.completed;
+    this.save();
+  }
 
-    addTodo(title, description){
-        const todo = {
-            id: this.currentId++,
-            title,
-            description,
-            completed: false,
-        }
+  editTodo(id, values) {
+    const index = this.findTodo(id);
+    Object.assign(this.todos[index], values);
+    this.save();
+  }
 
-        this.todos.push(todo);
-        console.log(this.todos);
-        this.save();
-        return {...todo};
-    }
+  addTodo(title, description) {
+    const todo = {
+      id: this.currentId++,
+      title,
+      description,
+      completed: false,
+    };
 
-    removeTodo(id) {
-        const index = this.findTodo(id);
-        this.todos.splice(index, 1);
-        this.save();
-    }
+    this.todos.push(todo);
+    console.log(this.todos);
+    this.save();
+    return { ...todo };
+  }
+
+  removeTodo(id) {
+    const index = this.findTodo(id);
+    this.todos.splice(index, 1);
+    this.save();
+  }
 }

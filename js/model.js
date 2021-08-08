@@ -4,6 +4,7 @@ export default class Model {
   constructor() {
     this.view = null;
     this.todos = JSON.parse(localStorage.getItem("todos"));
+    
     if (!this.todos || this.todos.length < 1) {
       this.todos = [
         {

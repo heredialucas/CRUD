@@ -19,6 +19,8 @@ export default class AddTodo {
       } else {
         this.alert.hide();
         callback(this.title.value, this.description.value);
+        title.value = '';
+        description.value = '';
       }
     };
   }

@@ -14,13 +14,13 @@ export default class AddTodo {
 
   onClick(callback) {
     this.btn.onclick = () => {
-      if (title.value === "" || description.value === "") {
+      if (this.title.value === "" || this.description.value === "") {
         this.alert.show("Title and description are required");
       } else {
         this.alert.hide();
         callback(this.title.value, this.description.value);
-        title.value = '';
-        description.value = '';
+        this.title.value = '';
+        this.description.value = '';
       }
     };
   }
